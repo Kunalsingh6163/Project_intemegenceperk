@@ -1,32 +1,48 @@
-import React, { useState } from 'react'
+"use client";
+import { Box, Button, TextField } from "@mui/material";
+import React, { useState } from "react";
 
 function Login() {
-    const [user, setUser] = useState('');
-    const [password, setPassword] = useState('')
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: any) => {
+    console.log(e);
+  };
   return (
-    <div >
-        <div className="flex flex-col space-y-1">
-              <label htmlFor="email" className="text-sm font-semibold text-gray-500">Email address</label>
-              <input
-                type="email"
-                id="email"
-                autoFocus
-                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
-              />
-            </div>
-            <div className="flex flex-col space-y-1">
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="text-sm font-semibold text-gray-500">Password</label>
-                <a href="#" className="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</a>
-              </div>
-              <input
-                type="password"
-                id="password"
-                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
-              />
-            </div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: "50px",
+      }}
+    >
+      <Box>
+        <TextField
+          required
+          id="outlined-required"
+          label="User Name"
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
+
+        />
+        <br />
+        <TextField
+          label="Password"
+          required
+          id="outlined-required"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+      </Box>
+      <Box>
+        <Button onSubmit={handleSubmit}>Submit</Button>
+      </Box>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

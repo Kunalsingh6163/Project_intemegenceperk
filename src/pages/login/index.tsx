@@ -1,8 +1,15 @@
+import Counter from '@/component/Counter/Counter'
+import Car from '@/component/Dashboard/Car'
 import React from 'react'
 
 function Login() {
   return (
-    <div>Login</div>
+    <div>
+      <Car />
+      <div>
+        <Counter />
+      </div>
+    </div>
   )
 }
 
